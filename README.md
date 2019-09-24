@@ -6,6 +6,16 @@ We're going to build off the previous iteration of our Blog App, where we create
 
 ## Tags
 
+<<<<<<< HEAD
+1. We need to change the permitted params in our post controller to accept another attribute: `:tags_attributes`, which permit the tag attributes that we need to create a new tag.
+2. `accepts_nested_attributes_for` on Post model, which will permit tags to be nested in our new post form.
+3. Now we can build a nested form on our Post form. Check out the documentation on [Nested Forms](http://guides.rubyonrails.org/form_helpers.html#nested-forms) for help.
+4. We should be able to select previously create tags, as well as create a new tag.
+5. Remember, because we have a validation on name presence of tag, we will need to account for that; a user shouldn't have to submit a new tag every time they submit a post. To do this, the form for a new tag should instantiate a new tag. Check out the documentation for the [fields_for tag](http://apidock.com/rails/ActionView/Helpers/FormBuilder/fields_for).
+
+## Resources
+[Strong Params](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters)
+=======
 1. We need to change the permitted params in our `PostsController` to accept another attribute, `:tags_attributes`, which contains the tag attributes that we need to create a new tag.
 2. We also need an `accepts_nested_attributes_for` macro on our `Post` model, which will permit tags to be nested in our new `Post` form.
 3. Now we can build a nested form in our `Post` form. Check out the documentation on [Nested Forms](http://guides.rubyonrails.org/form_helpers.html#nested-forms) for help.
@@ -18,9 +28,15 @@ We're going to build off the previous iteration of our Blog App, where we create
     accepts_nested_attributes_for :posts, reject_if: proc { |attributes| attributes['title'].blank? }
   end
   ```
+>>>>>>> merge with wip-rails-update-solution
 
 6. To allow a user to create a new tag, the controller action for a new tag should instantiate a new tag. Check out the documentation for the [`fields_for` tag](http://apidock.com/rails/ActionView/Helpers/FormBuilder/fields_for).
 
+<<<<<<< HEAD
+[fields_for tag](http://apidock.com/rails/ActionView/Helpers/FormBuilder/fields_for)
+
+[Preventing Empty Records](http://guides.rubyonrails.org/form_helpers.html#preventing-empty-records)
+=======
 ## Resources
 * [Strong Params](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters)
 * [Nested Forms](http://guides.rubyonrails.org/form_helpers.html#nested-forms)
@@ -28,3 +44,4 @@ We're going to build off the previous iteration of our Blog App, where we create
 * [Preventing Empty Records](http://guides.rubyonrails.org/form_helpers.html#preventing-empty-records)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-blog-nested-forms' title='Rails Blog: Complex Nested Forms'>Rails Blog: Complex Nested Forms</a> on Learn.co and start learning to code for free.</p>
+>>>>>>> merge with wip-rails-update-solution
